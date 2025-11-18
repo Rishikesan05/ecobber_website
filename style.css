@@ -1,12 +1,3 @@
-/*
-  Colour palette and global styles
-  ------------------------------------------------------------------
-  The variables defined here control the entire colour scheme of the
-  site. Adjust these values to fine‑tune the look without digging
-  through the whole stylesheet. All measurements are relative or in
-  rem units to support responsive scaling.
-*/
-
 :root {
   --primary-color: #2c5f2d;
   --secondary-color: #97c93d;
@@ -90,8 +81,6 @@ a:hover {
 }
 
 .logo {
-  /* Display the logo image and tagline in a row so they sit neatly
-     next to each other within the navigation bar. */
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -113,11 +102,7 @@ a:hover {
   font-weight: 500;
 }
 
-/* Logo image styling */
 .logo-image {
-  /* Increase the logo icon size to make it more prominent in the
-     navigation bar. The height is set to 60px and the width scales
-     proportionally. */
   height: 60px;
   width: auto;
   display: block;
@@ -219,7 +204,6 @@ a:hover {
   }
 }
 
-/* Hero */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -258,52 +242,27 @@ a:hover {
   animation: fadeInUp 1s ease forwards;
   opacity: 0;
   transform: translateY(30px);
-  /* The hero content no longer has a border so the text sits
-     directly on the illustrated background. We keep the
-     animation and spacing but remove the border and border radius. */
   border: none;
   border-radius: 0;
-  /* Center the hero text within its container */
   display: inline-block;
   margin: 0 auto;
-  /* Add top padding so the large watermark text doesn't overlap
-     the fixed navigation bar. Increase padding to push the text
-     further down. */
   padding-top: 8rem;
 }
-
-/*
- * Hero brand badge
- *
- * A dedicated brand mark in the hero section ensures the company name is
- * visible even against the richly illustrated background. The semi‑opaque
- * background and subtle border provide contrast without overwhelming
- * the design. The badge inherits the heading font for a cohesive look.
- */
 .hero-brand {
   display: inline-block;
   font-family: 'Playfair Display', serif;
-  /* Increase the brand size so it serves as a focal point without
-     requiring a coloured background. */
   font-size: 4rem;
   font-weight: 800;
-  /* Set a solid white colour for the company name to provide strong
-     contrast against the green illustrated background. */
   color: var(--white);
   background: none;
   padding: 0;
   margin-bottom: 1rem;
   border: none;
   border-radius: 0;
-  /* Apply a drop shadow so the text remains legible even where the
-     background illustration is lighter. */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-title {
-  /* Style the main hero heading so it stands out clearly against the
-     leafy background. Use a solid white colour with a subtle drop
-     shadow for better contrast. */
   font-size: 4rem;
   margin-bottom: 0.5rem;
   color: var(--white);
@@ -317,8 +276,6 @@ a:hover {
   font-size: 1.5rem;
   margin-bottom: 0.3rem;
   font-weight: 600;
-  /* Use a lighter colour for the subtitle with a drop shadow to
-     improve contrast against the background. */
   color: var(--white);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
@@ -327,7 +284,6 @@ a:hover {
   font-size: 1.1rem;
   font-style: italic;
   margin-bottom: 1rem;
-  /* Tagline colour and subtle shadow for readability */
   color: var(--white);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   opacity: 0.85;
@@ -336,7 +292,6 @@ a:hover {
 .hero-description {
   font-size: 1rem;
   margin-bottom: 2rem;
-  /* Description text colour and shadow for clarity */
   color: var(--white);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   opacity: 0.9;
@@ -349,7 +304,6 @@ a:hover {
   flex-wrap: wrap;
 }
 
-/* Buttons */
 .btn {
   padding: 0.9rem 2rem;
   border-radius: 40px;
@@ -385,7 +339,6 @@ a:hover {
   transform: translateY(-3px);
 }
 
-/* Scroll indicator */
 .scroll-indicator {
   position: absolute;
   bottom: 20px;
@@ -462,7 +415,6 @@ section {
   font-size: 1.1rem;
 }
 
-/* Generic card grid used in multiple sections */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -505,7 +457,6 @@ section {
   line-height: 1.6;
 }
 
-/* Business model cards */
 .business-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -538,7 +489,6 @@ section {
   line-height: 1.6;
 }
 
-/* Tabs for products */
 .tabs {
   display: flex;
   justify-content: center;
@@ -572,7 +522,6 @@ section {
   display: block;
 }
 
-/* Sustainability */
 .sustainability-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -606,7 +555,6 @@ section {
   line-height: 1.6;
 }
 
-/* Contact section */
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -662,28 +610,12 @@ section {
   box-shadow: 0 0 0 3px rgba(44, 95, 45, 0.2);
 }
 
-/* Footer */
-/*
- * Footer styling
- *
- * The original footer used a very generous amount of top and bottom
- * padding which made the section look overly tall, especially on
- * smaller screens. To create a more compact footer we reduce the
- * vertical padding and tighten up spacing between elements. The dark
- * background and contrast remain unchanged for accessibility.
- */
 .footer {
   background: var(--dark-bg);
   color: var(--white);
-  /* Reduce top/bottom padding to make the footer more compact. */
   padding: 2rem 0 1rem;
 }
 
-/* The footer-content container uses flex layout to arrange the
- * individual sections side by side. The original design had a 2rem
- * gap which, combined with the generous padding, contributed to a
- * lot of white space. We reduce the gap to 1.5rem for a tighter look
- * without sacrificing readability. */
 .footer-content {
   display: flex;
   flex-wrap: wrap;
@@ -693,8 +625,6 @@ section {
 
 .footer-section h3,
 .footer-section h4 {
-  /* Reduce bottom margin on headings in the footer so the
-   * spacing between heading and content is tighter. */
   margin-bottom: 0.5rem;
   color: var(--white);
 }
@@ -704,7 +634,6 @@ section {
 .footer-section li {
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.95rem;
-  /* Reduce default paragraph margin to keep the footer compact */
   margin-bottom: 0.3rem;
 }
 
@@ -721,8 +650,6 @@ section {
   margin-top: 0.5rem;
 }
 
-/* Footer bottom line with copyright text. The margin-top was reduced
- * to 1rem to tighten up the overall height of the footer. */
 .footer-bottom {
   text-align: center;
   margin-top: 1rem;
@@ -730,7 +657,6 @@ section {
   font-size: 0.9rem;
 }
 
-/* Visually hidden class for accessibility */
 .visually-hidden {
   position: absolute !important;
   height: 1px;
@@ -740,7 +666,6 @@ section {
   white-space: nowrap;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 3rem;
