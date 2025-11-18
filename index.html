@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecobber – Eco‑Friendly Rubber Manufacturing</title>
+    <!--
+      The design of this page follows a lightweight, responsive structure
+      that avoids any heavy frameworks. All styles are defined in
+      “style.css” and interactions are handled in “script.js”.
+    -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Primary navigation bar. It is fixed to the top and collapses
+         into a hamburger menu on small screens for better usability. -->
+    <header class="navbar">
+      <div class="container nav-container">
+        <div class="logo">
+          <!-- Company logo icon. The alt text provides an accessible
+               description for screen readers. The background has been
+               removed and the icon cropped to focus on the stylised
+               E and leaf shape. -->
+          <!-- Use the cleaned logo with transparent background for a polished header look -->
+          <img src="logo_icon_clean.png" alt="Ecobber logo icon featuring a stylised leaf and the letter E" class="logo-image" />
+          <span class="logo-tagline">Shaping Rubber, Saving Nature</span>
+        </div>
+        <button class="mobile-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#business-model">Business Model</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#sustainability">Sustainability</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero section. A bold opening statement with a decorative
+         illustration that sets the tone for the site. -->
+    <section id="home" class="hero" aria-label="Hero section">
+      <img
+        src="hero-bg.png"
+        alt="Illustration of green leaves and rubber trees representing eco‑friendly rubber manufacturing"
+        class="hero-img"
+      />
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <!-- A prominent brand badge is included here so the company name stands out
+             against the illustrated background. -->
+        <h1 class="hero-brand">Ecobber</h1>
+        <p class="hero-subtitle">Eco‑Friendly Rubber Manufacturing</p>
+        <p class="hero-tagline">Shaping Rubber, Saving Nature</p>
+        <p class="hero-description">
+          Leading the shift towards sustainable rubber production with zero
+          waste processes and renewable energy.
+        </p>
+        <div class="hero-buttons">
+          <a href="#about" class="btn btn-primary">Learn More</a>
+          <a href="#contact" class="btn btn-secondary">Contact Us</a>
+        </div>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true">
+        <span></span>
+      </div>
+    </section>
+
+    <!-- About section. Introduces the company's vision, mission and a
+         short description. Each item is presented as a card for
+         clarity. -->
+    <section id="about" class="about" aria-label="About Ecobber">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About Ecobber</h2>
+          <p class="section-subtitle">
+            Pioneering sustainable rubber manufacturing
+          </p>
+        </div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">🎯</div>
+            <h3 class="card-title">Our Vision</h3>
+            <p>
+              To become the leading eco‑friendly rubber manufacturer,
+              proving that sustainability and innovation go hand in hand.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">🌱</div>
+            <h3 class="card-title">Our Mission</h3>
+            <p>
+              To provide quality rubber products while reducing waste by
+              turning rubber by‑products into useful materials. We
+              connect manufacturers and businesses to promote recycling,
+              save resources and support a greener future.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">🏭</div>
+            <h3 class="card-title">Who We Are</h3>
+            <p>
+              Ecobber is a leader in the rubber industry, dedicated to
+              producing world‑class products while ensuring zero
+              wastage. Every resource counts – that’s why we transform
+              by‑products into valuable side products instead of waste.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Business Model section. Lays out our sustainable business
+         blueprint with eight building blocks inspired by the Business
+         Model Canvas. Each block is presented in its own card. -->
+    <section
+      id="business-model"
+      class="business-model"
+      aria-label="Business Model"
+    >
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Business Model</h2>
+          <p class="section-subtitle">
+            Our sustainable blueprint for success
+          </p>
+        </div>
+        <div class="business-grid">
+          <div class="business-card">
+            <h3>Key Partners</h3>
+            <ul>
+              <li>Eco‑conscious rubber suppliers</li>
+              <li>Renewable energy providers (solar & wind)</li>
+              <li>Recycling companies</li>
+              <li>Transport & logistics partners</li>
+              <li>Environmental NGOs & certification bodies</li>
+            </ul>
+          </div>
+          <div class="business-card">
+            <h3>Key Activities</h3>
+            <ul>
+              <li>Production of eco‑friendly rubber products</li>
+              <li>Zero‑waste recycling of rubber</li>
+              <li>Water collection, treatment & reuse</li>
+              <li>Energy management using solar/wind</li>
+              <li>Logistics optimisation for low emissions</li>
+              <li>Continuous sustainability monitoring</li>
+            </ul>
+          </div>
+          <div class="business-card">
+            <h3>Key Resources</h3>
+            <ul>
+              <li>Renewable energy systems (solar panels, turbines)</li>
+              <li>Water treatment systems</li>
+              <li>Manufacturing equipment</li>
+              <li>Skilled labour & sustainability experts</li>
+              <li>Digital monitoring systems</li>
+              <li>Financial & technical resources</li>
+            </ul>
+          </div>
+          <div class="business-card">
+            <h3>Value Proposition</h3>
+            <ul>
+              <li>100 % sustainable, eco‑friendly rubber products</li>
+              <li>Zero waste & low‑carbon production</li>
+              <li>Renewable‑energy manufacturing</li>
+              <li>Responsible water use & recycling</li>
+              <li>Green supply chain</li>
+              <li>Products with environmental certifications</li>
+            </ul>
+          </div>
+          <div class="business-card">
+            <h3>Channels</h3>
+            <ul>
+              <li>Company website & e‑commerce</li>
+              <li>Eco‑product marketplaces</li>
+              <li>Social media platforms</li>
+              <li>Sustainability trade fairs</li>
+              <li>Partner distributors & retailers</li>
+            </ul>
+          </div>
+          <div class="business-card">
+            <h3>Customer Segments</h3>
+            <ul>
+              <li>Eco‑conscious consumers</li>
+              <li>Companies seeking sustainable suppliers</li>
+              <li>Construction & real‑estate firms using green materials</li>
+              <li>Governments & NGOs supporting sustainability</li>
+              <li>Export markets with eco‑product demand</li>
+            </ul>
+          </div>
+          <div class="business-card">
+            <h3>Customer Relationships</h3>
+            <ul>
+              <li>Transparent communication & eco‑reports</li>
+              <li>After‑sales support</li>
+              <li>Social media engagement</li>
+              <li>Environmental awareness campaigns</li>
+              <li>Green loyalty programmes</li>
+            </ul>
+          </div>
+          <div class="business-card">
+            <h3>Cost Structure</h3>
+            <ul>
+              <li>Labour & training costs</li>
+              <li>Energy infrastructure (solar & wind)</li>
+              <li>Recycling & water treatment systems</li>
+              <li>Marketing & eco‑branding</li>
+              <li>Logistics & transportation</li>
+              <li>Certification & compliance</li>
+            </ul>
+          </div>
+          <div class="business-card">
+            <h3>Revenue Streams</h3>
+            <ul>
+              <li>Product sales (eco‑rubber goods)</li>
+              <li>Premium from sustainable branding</li>
+              <li>Partnerships with eco organisations</li>
+              <li>Licensing of eco‑process technology</li>
+              <li>Government sustainability grants</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products section. Uses tab navigation to switch between main
+         products and zero‑waste products without reloading the page. -->
+    <section id="products" class="products" aria-label="Products">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Products</h2>
+          <p class="section-subtitle">
+            High‑quality sustainable rubber solutions
+          </p>
+        </div>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="main-products">
+            Main Products
+          </button>
+          <button class="tab-btn" data-tab="side-products">
+            Zero‑Waste Products
+          </button>
+        </div>
+        <div class="tab-content active" id="main-products">
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-icon" aria-hidden="true">📋</div>
+              <h3 class="card-title">Natural Rubber Sheets</h3>
+              <p>
+                Trusted for industrial machinery, gaskets and seals.
+                These durable sheets find applications wherever
+                high‑performance sealing is needed.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-icon" aria-hidden="true">🔬</div>
+              <h3 class="card-title">Rubber Compounds</h3>
+              <p>
+                Custom formulations for automotive, footwear and
+                construction industries. Designed for durability and
+                flexibility.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-icon" aria-hidden="true">⚙️</div>
+              <h3 class="card-title">Specialty Components</h3>
+              <p>
+                High‑performance rubber parts for demanding
+                applications including medical devices, machinery and
+                infrastructure.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="tab-content" id="side-products">
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-icon" aria-hidden="true">🔴</div>
+              <h3 class="card-title">Rubber Crumbs & Powder</h3>
+              <p>
+                Repurposed waste rubber for playgrounds, sports tracks
+                and eco‑friendly flooring.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-icon" aria-hidden="true">🔄</div>
+              <h3 class="card-title">Reclaimed Rubber</h3>
+              <p>
+                An economical, sustainable material for tires, tubes,
+                mats and belts.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-icon" aria-hidden="true">⚡</div>
+              <h3 class="card-title">Eco‑Fuel</h3>
+              <p>
+                Harnessing energy potential from rubber residue to
+                reduce fossil fuel dependence.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-icon" aria-hidden="true">🟫</div>
+              <h3 class="card-title">Rubber Tiles & Mats</h3>
+              <p>
+                Durable, slip‑resistant surfaces ideal for gyms, homes
+                and workplaces.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sustainability & Operations section. Summarises the
+         environmental analysis and the operational practices adopted by
+         Ecobber. Each block is kept succinct and presented as a list. -->
+    <section
+      id="sustainability"
+      class="sustainability"
+      aria-label="Sustainability and Operations"
+    >
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Sustainability &amp; Operations</h2>
+          <p class="section-subtitle">
+            How we protect our planet while we produce
+          </p>
+        </div>
+        <div class="sustainability-grid">
+          <div class="sustainability-card">
+            <h3>Environmental Analysis</h3>
+            <ul>
+              <li>
+                The global rubber industry generates significant waste
+                and pollution.
+              </li>
+              <li>
+                Consumers and governments demand greener manufacturing.
+              </li>
+              <li>
+                Ecobber meets these needs by recycling all rubber
+                by‑products and minimising emissions.
+              </li>
+              <li>
+                Our focus on clean energy, water conservation and
+                waste reduction gives us an edge.
+              </li>
+            </ul>
+          </div>
+          <div class="sustainability-card">
+            <h3>Operations &amp; Eco Practices</h3>
+            <ul>
+              <li>
+                <strong>Zero Waste Production:</strong> every rubber
+                by‑product is recycled.
+              </li>
+              <li>
+                <strong>Renewable Energy:</strong> powered by solar and
+                wind to cut carbon emissions.
+              </li>
+              <li>
+                <strong>Water Recycling:</strong> water is collected,
+                treated and reused in production.
+              </li>
+              <li>
+                <strong>Sustainable Sourcing:</strong> partnerships with
+                eco‑conscious suppliers keep our supply chain green.
+              </li>
+              <li>
+                <strong>Efficient Logistics:</strong> optimised routes
+                reduce emissions and ensure timely deliveries.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industries section. Highlights the sectors that rely on
+         Ecobber's products. Presented as cards for clarity. -->
+    <section id="industries" class="industries" aria-label="Industries">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Industries We Serve</h2>
+          <p class="section-subtitle">
+            Providing sustainable solutions across multiple sectors
+          </p>
+        </div>
+        <div class="cards-grid industries-grid">
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">🚗</div>
+            <h3 class="card-title">Automotive &amp; Transport</h3>
+            <p>
+              High‑performance rubber components for vehicles, tires,
+              belts and seals.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">🏗️</div>
+            <h3 class="card-title">Construction &amp; Infrastructure</h3>
+            <p>
+              Sustainable flooring, mats and other materials for green
+              building.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">🏃</div>
+            <h3 class="card-title">Sports &amp; Recreation</h3>
+            <p>
+              Eco‑friendly surfaces and equipment for sports facilities
+              and playgrounds.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-icon" aria-hidden="true">🏥</div>
+            <h3 class="card-title">Healthcare &amp; Consumer Goods</h3>
+            <p>
+              Medical‑grade components and everyday products made
+              from sustainable rubber.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact section. Includes contact details and a simple form.
+         Labels are visually hidden but remain accessible for screen
+         readers. -->
+    <section id="contact" class="contact" aria-label="Contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Contact Us</h2>
+          <p class="section-subtitle">
+            Let’s build a greener future together
+          </p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">📞</span>
+              <div>
+                <h3>Phone</h3>
+                <p>+123‑456‑7890</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">🌐</span>
+              <div>
+                <h3>Website</h3>
+                <p><a href="https://www.ecobbar.com">www.ecobbar.com</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">📍</span>
+              <div>
+                <h3>Location</h3>
+                <p>Pambahina Junction, Behilioya</p>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form" action="#" method="post">
+            <div class="form-group">
+              <label for="name" class="visually-hidden">Your Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email" class="visually-hidden">Your Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="subject" class="visually-hidden">Subject</label>
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                placeholder="Subject"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="message" class="visually-hidden"
+                >Your Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Your Message"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section. Contains quick links and contact details. -->
+    <footer class="footer" aria-label="Footer">
+      <div class="container footer-content">
+        <div class="footer-section">
+          <h3>Ecobber</h3>
+          <p>
+            Turning Rubber into Opportunities, Without Wasting a Single
+            Drop!
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#business-model">Business Model</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#sustainability">Sustainability</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Phone: +123‑456‑7890</p>
+          <p>
+            Email:
+            <a href="mailto:info@ecobbar.com">info@ecobbar.com</a>
+          </p>
+          <p>Pambahina Junction, Behilioya</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Ecobber. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

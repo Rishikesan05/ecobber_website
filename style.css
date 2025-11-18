@@ -1,0 +1,754 @@
+/*
+  Colour palette and global styles
+  ------------------------------------------------------------------
+  The variables defined here control the entire colour scheme of the
+  site. Adjust these values to fine‑tune the look without digging
+  through the whole stylesheet. All measurements are relative or in
+  rem units to support responsive scaling.
+*/
+
+:root {
+  --primary-color: #2c5f2d;
+  --secondary-color: #97c93d;
+  --accent-color: #1a8f5c;
+  --dark-bg: #1a2e1a;
+  --light-bg: #f5f9f6;
+  --text-dark: #2d3436;
+  --text-light: #636e72;
+  --white: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+  --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.navbar.scroll-down {
+  transform: translateY(-100%);
+}
+
+.navbar.scroll-up {
+  transform: translateY(0);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  /* Display the logo image and tagline in a row so they sit neatly
+     next to each other within the navigation bar. */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-tagline {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* Logo image styling */
+.logo-image {
+  /* Increase the logo icon size to make it more prominent in the
+     navigation bar. The height is set to 60px and the width scales
+     proportionally. */
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  position: relative;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient);
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.mobile-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.mobile-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    box-shadow: var(--shadow);
+  }
+  .nav-links.active {
+    max-height: 400px;
+  }
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  .nav-links a {
+    display: block;
+    padding: 1rem 0;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  margin-top: 70px;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 2rem;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  /* The hero content no longer has a border so the text sits
+     directly on the illustrated background. We keep the
+     animation and spacing but remove the border and border radius. */
+  border: none;
+  border-radius: 0;
+  /* Center the hero text within its container */
+  display: inline-block;
+  margin: 0 auto;
+  /* Add top padding so the large watermark text doesn't overlap
+     the fixed navigation bar. Increase padding to push the text
+     further down. */
+  padding-top: 8rem;
+}
+
+/*
+ * Hero brand badge
+ *
+ * A dedicated brand mark in the hero section ensures the company name is
+ * visible even against the richly illustrated background. The semi‑opaque
+ * background and subtle border provide contrast without overwhelming
+ * the design. The badge inherits the heading font for a cohesive look.
+ */
+.hero-brand {
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  /* Increase the brand size so it serves as a focal point without
+     requiring a coloured background. */
+  font-size: 4rem;
+  font-weight: 800;
+  /* Set a solid white colour for the company name to provide strong
+     contrast against the green illustrated background. */
+  color: var(--white);
+  background: none;
+  padding: 0;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 0;
+  /* Apply a drop shadow so the text remains legible even where the
+     background illustration is lighter. */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title {
+  /* Style the main hero heading so it stands out clearly against the
+     leafy background. Use a solid white colour with a subtle drop
+     shadow for better contrast. */
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  /* Use a lighter colour for the subtitle with a drop shadow to
+     improve contrast against the background. */
+  color: var(--white);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  /* Tagline colour and subtle shadow for readability */
+  color: var(--white);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  opacity: 0.85;
+}
+
+.hero-description {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  /* Description text colour and shadow for clarity */
+  color: var(--white);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.9rem 2rem;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: var(--white);
+  color: var(--primary-color);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.btn-secondary:hover {
+  background: var(--white);
+  color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 40px;
+  border: 2px solid var(--white);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+  box-sizing: border-box;
+}
+
+.scroll-indicator span {
+  width: 4px;
+  height: 8px;
+  background: var(--white);
+  border-radius: 2px;
+  animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  padding: 5rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--gradient);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* Generic card grid used in multiple sections */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.card.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Business model cards */
+.business-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.business-card {
+  background: var(--light-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.business-card.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.business-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.business-card ul {
+  list-style: disc inside;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Tabs for products */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.6rem 1.5rem;
+  margin: 0.3rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Sustainability */
+.sustainability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.sustainability-card {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.sustainability-card.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sustainability-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--primary-color);
+}
+
+.sustainability-card ul {
+  list-style: disc inside;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Contact section */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.contact-form {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(44, 95, 45, 0.2);
+}
+
+/* Footer */
+/*
+ * Footer styling
+ *
+ * The original footer used a very generous amount of top and bottom
+ * padding which made the section look overly tall, especially on
+ * smaller screens. To create a more compact footer we reduce the
+ * vertical padding and tighten up spacing between elements. The dark
+ * background and contrast remain unchanged for accessibility.
+ */
+.footer {
+  background: var(--dark-bg);
+  color: var(--white);
+  /* Reduce top/bottom padding to make the footer more compact. */
+  padding: 2rem 0 1rem;
+}
+
+/* The footer-content container uses flex layout to arrange the
+ * individual sections side by side. The original design had a 2rem
+ * gap which, combined with the generous padding, contributed to a
+ * lot of white space. We reduce the gap to 1.5rem for a tighter look
+ * without sacrificing readability. */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  /* Reduce bottom margin on headings in the footer so the
+   * spacing between heading and content is tighter. */
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.footer-section p,
+.footer-section a,
+.footer-section li {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  /* Reduce default paragraph margin to keep the footer compact */
+  margin-bottom: 0.3rem;
+}
+
+.footer-section a:hover {
+  color: var(--white);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li + li {
+  margin-top: 0.5rem;
+}
+
+/* Footer bottom line with copyright text. The margin-top was reduced
+ * to 1rem to tighten up the overall height of the footer. */
+.footer-bottom {
+  text-align: center;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+/* Visually hidden class for accessibility */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+}
